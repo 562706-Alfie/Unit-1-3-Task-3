@@ -17,9 +17,9 @@ public class GameRespawn : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D flyer)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if(flyer.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player") || Input.GetKeyDown("r"))
         {
             player.transform.position = respawnPoint.position;
         }

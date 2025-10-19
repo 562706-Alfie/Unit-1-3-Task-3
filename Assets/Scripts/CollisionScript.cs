@@ -20,5 +20,3 @@ public class CollisionScript : MonoBehaviour
         print("Player has collided with " + other);
     }
 }
-
-

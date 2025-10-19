@@ -13,12 +13,12 @@ public class PlayerScript : MonoBehaviour
 
     HelperScript helper;
     Rigidbody2D rb;
-    float _currentTime = 0;
     public Animator anim;
     public LayerMask groundLayer;
-    public float speed = 3.5f;
     public Vector3 pos;
     public GameObject weapon;
+    public float yvel;
+    public float xvel;
 
     bool IsGrounded()
     {
@@ -108,8 +108,7 @@ public class PlayerScript : MonoBehaviour
         float xvel, yvel;
         xvel = rb.linearVelocity.x;
         yvel = rb.linearVelocity.y;
-        _currentTime = _currentTime - Time.deltaTime;
-
+        
 
         if (xvel >= 0.1f || xvel <= -0.1f)
         {
@@ -179,21 +178,6 @@ public class PlayerScript : MonoBehaviour
 
         rb.linearVelocity = new Vector3(xvel, yvel, 0);
 
-
-        if (Input.GetKey(KeyCode.W) && _currentTime <= 0 && SuperJump())
-        {
-            yvel = 10f;
-            _currentTime = 5;
-        }
-        else
-        {
-            return;
-        }
-
-
-        rb.linearVelocity = new Vector3(xvel, yvel, 0);
-
-        
         if (Input.GetKeyDown("q"))
         {
             GameObject clone;
