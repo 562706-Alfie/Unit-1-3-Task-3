@@ -1,25 +1,42 @@
 using UnityEngine;
 using System;
 
-public class EnemyAI : MonoBehaviour
+public class Mushroom_AI : MonoBehaviour
 {
 
     Rigidbody2D rb;
     public LayerMask groundLayerMask;
+    public LayerMask MushroomLayerMask;
+    public float Speed;
     float xvel;
-    public PlayerScript playerScript;
+    float yvel;
+    public PlayerScript PlayerScript;
+    public SuperJump SJ;
+    public float MushroomJumpHeight; // change jumpehight for diff mshroom
+    public bool canDie = true;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        xvel = 1;
+        xvel = Speed;
     }
 
     void Update()
     {
         Movement();
 
-        print("player pos is " + playerScript.pos);
+        print("player pos is " + PlayerScript.pos);
+    }
+
+    void OnTriggerEnter2D(Collider2D Player)
+    {
+        SJ.PlayerKilledEnemy++;
+
+        if (canDie == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
 
@@ -27,20 +44,20 @@ public class EnemyAI : MonoBehaviour
     {
         if( xvel > 0 )
         {
-            if(ExtendedRayCollisionCheck(1,0) == false )
+            if(ExtendedRayCollisionCheck(0.16f,0) == false )
             {
                 xvel = -xvel;
-                GetComponent<SpriteRenderer>().flipX = true;
+                GetComponent<SpriteRenderer>().flipX = false;
             }
 
         }
 
         if (xvel < 0)
         {
-            if (ExtendedRayCollisionCheck(-1, 0) == false)
+            if (ExtendedRayCollisionCheck(-0.16f, 0) == false)
             {
                 xvel = -xvel;
-                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipX = true;
             }
 
         }
@@ -51,20 +68,15 @@ public class EnemyAI : MonoBehaviour
 
     public bool ExtendedRayCollisionCheck(float xoffs, float yoffs)
     {
-        float rayLength = 0.7f; // length of raycast
+        float rayLength = 0.112f;
         bool hitSomething = false;
 
-        // convert x and y offset into a Vector3 
         Vector3 offset = new Vector3(xoffs, yoffs, 0);
-
-        //cast a ray downward 
         RaycastHit2D hit;
 
 
         hit = Physics2D.Raycast(transform.position + offset, -Vector2.up, rayLength, groundLayerMask);
-
         Color hitColor = Color.white;
-
 
         if (hit.collider != null)
         {
@@ -72,8 +84,7 @@ public class EnemyAI : MonoBehaviour
             hitColor = Color.green;
             hitSomething = true;
         }
-        // draw a debug ray to show ray position
-        // You need to enable gizmos in the editor to see these
+
         Debug.DrawRay(transform.position + offset, -Vector3.up * rayLength, hitColor);
 
         return hitSomething;

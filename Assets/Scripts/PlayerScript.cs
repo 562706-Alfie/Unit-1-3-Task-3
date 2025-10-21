@@ -17,8 +17,7 @@ public class PlayerScript : MonoBehaviour
     public LayerMask groundLayer;
     public Vector3 pos;
     public GameObject weapon;
-    public float yvel;
-    public float xvel;
+
 
     bool IsGrounded()
     {
@@ -101,6 +100,8 @@ public class PlayerScript : MonoBehaviour
     }
 
     // Update is called once per frame
+
+
     void Update()
     {
         pos = transform.position;
@@ -108,7 +109,6 @@ public class PlayerScript : MonoBehaviour
         float xvel, yvel;
         xvel = rb.linearVelocity.x;
         yvel = rb.linearVelocity.y;
-        
 
         if (xvel >= 0.1f || xvel <= -0.1f)
         {
@@ -178,22 +178,15 @@ public class PlayerScript : MonoBehaviour
 
         rb.linearVelocity = new Vector3(xvel, yvel, 0);
 
-        if (Input.GetKeyDown("q"))
+        if (Input.GetMouseButtonDown(1))
         {
             GameObject clone;
             clone = Instantiate(weapon, transform.position, transform.rotation);
-
             Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();
-
-            rb.linearVelocity = new Vector2(10, 0);
-
+            rb.linearVelocity = new Vector2(15, 0);
             rb.transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z + 1);
         }
 
-    }
-
-    public void Killed()
-    {
 
     }
 }

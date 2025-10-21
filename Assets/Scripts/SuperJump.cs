@@ -7,8 +7,11 @@ public class SuperJump : MonoBehaviour
     float yvel;
     float xvel;
     float currentTime = 0;
-    public TextMeshProUGUI cooldownText; // Assign in Inspector
+    public TextMeshProUGUI cooldownText;
     public float cooldownDuration = 5f;
+    public int PlayerKilledEnemy;
+    public Mushroom_AI MA;
+
 
     void Start()
     {
@@ -46,5 +49,14 @@ public class SuperJump : MonoBehaviour
         }
 
         rb.linearVelocity = new Vector2(xvel, yvel);
+
+        if (PlayerKilledEnemy > 0)
+        {
+            yvel = MA.MushroomJumpHeight;
+            PlayerKilledEnemy = 0;
+        }
+
+        rb.linearVelocity = new Vector2(xvel, yvel);
+
     }
 }
