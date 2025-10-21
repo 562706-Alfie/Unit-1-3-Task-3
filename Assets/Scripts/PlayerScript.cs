@@ -17,8 +17,6 @@ public class PlayerScript : MonoBehaviour
     public LayerMask groundLayer;
     public Vector3 pos;
     public GameObject weapon;
-    public float yvel;
-    public float xvel;
 
 
     bool IsGrounded()
@@ -180,7 +178,7 @@ public class PlayerScript : MonoBehaviour
 
         rb.linearVelocity = new Vector3(xvel, yvel, 0);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             GameObject clone;
             clone = Instantiate(weapon, transform.position, transform.rotation);

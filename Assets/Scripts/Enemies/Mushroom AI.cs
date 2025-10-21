@@ -12,6 +12,8 @@ public class Mushroom_AI : MonoBehaviour
     float yvel;
     public PlayerScript PlayerScript;
     public SuperJump SJ;
+    public float MushroomJumpHeight; // change jumpehight for diff mshroom
+    public bool canDie = true;
 
 
     void Start()
@@ -29,8 +31,12 @@ public class Mushroom_AI : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D Player)
     {
-        Destroy(gameObject);
         SJ.PlayerKilledEnemy++;
+
+        if (canDie == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
 

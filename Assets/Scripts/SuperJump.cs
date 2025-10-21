@@ -10,6 +10,7 @@ public class SuperJump : MonoBehaviour
     public TextMeshProUGUI cooldownText;
     public float cooldownDuration = 5f;
     public int PlayerKilledEnemy;
+    public Mushroom_AI MA;
 
 
     void Start()
@@ -51,7 +52,7 @@ public class SuperJump : MonoBehaviour
 
         if (PlayerKilledEnemy > 0)
         {
-            yvel = 1;
+            yvel = MA.MushroomJumpHeight;
             PlayerKilledEnemy = 0;
         }
 

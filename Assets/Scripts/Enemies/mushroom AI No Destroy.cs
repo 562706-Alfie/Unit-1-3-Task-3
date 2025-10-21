@@ -12,6 +12,7 @@ public class mushroomAINoRespawn : MonoBehaviour
     float yvel;
     public PlayerScript PlayerScript;
     public SuperJump SJ;
+    public float MushroomJumpHeight; // change jumpehight for diff mushroom
 
 
     void Start()
