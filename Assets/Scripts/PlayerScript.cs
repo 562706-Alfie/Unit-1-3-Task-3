@@ -189,6 +189,12 @@ public class PlayerScript : MonoBehaviour
 
             rb.transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z + 1);
         }
+
+    }
+
+    public void Killed()
+    {
+
     }
 }
 
