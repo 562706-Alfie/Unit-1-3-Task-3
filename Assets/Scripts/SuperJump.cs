@@ -11,7 +11,26 @@ public class SuperJump : MonoBehaviour
     public float cooldownDuration = 5f;
     public int PlayerKilledEnemy;
     public Mushroom_AI MA;
+    public bool DirectionDebug = false;
+    float directionDebugTimer = 0.25f;
 
+
+    public void CheckDirection()
+    {
+        if (DirectionDebug == true)
+        {
+            if (xvel > 0)
+            {
+                print("Object is moving Right");
+            }
+
+            if (xvel < 0)
+            {
+                print("Object is moving Left");
+            }
+        }
+
+    }
 
     void Start()
     {
@@ -23,6 +42,13 @@ public class SuperJump : MonoBehaviour
     {
         yvel = rb.linearVelocity.y;
         xvel = rb.linearVelocity.x;
+        directionDebugTimer -= Time.deltaTime;
+
+        if (directionDebugTimer < 0)
+        {
+            CheckDirection();
+            directionDebugTimer = 0.25f;
+        }
 
         if (currentTime > 0)
         {

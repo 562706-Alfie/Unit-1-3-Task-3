@@ -14,6 +14,8 @@ public class Mushroom_AI : MonoBehaviour
     public SuperJump SJ;
     public float MushroomJumpHeight; // change jumpehight for diff mshroom
     public bool canDie = true;
+    public bool DirectionDebug = false;
+    float directionDebugTimer = 0.25f;
 
 
     void Start()
@@ -25,8 +27,13 @@ public class Mushroom_AI : MonoBehaviour
     void Update()
     {
         Movement();
+        directionDebugTimer -= Time.deltaTime;
 
-        print("player pos is " + PlayerScript.pos);
+        if (directionDebugTimer < 0)
+        {
+            CheckDirection();
+            directionDebugTimer = 0.25f;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D Player)
@@ -39,6 +46,22 @@ public class Mushroom_AI : MonoBehaviour
         }
     }
 
+    public void CheckDirection()
+    {
+        if (DirectionDebug == true)
+        {
+            if (xvel > 0)
+            {
+                print("Object is moving Right");
+            }
+
+            if(xvel < 0)
+            {
+                print("Object is moving Left");
+            }
+        }
+
+    }
 
     void Movement()
     {
@@ -80,7 +103,6 @@ public class Mushroom_AI : MonoBehaviour
 
         if (hit.collider != null)
         {
-            print("Player has collided with Ground layer");
             hitColor = Color.green;
             hitSomething = true;
         }

@@ -17,9 +17,11 @@ public class PlayerScript : MonoBehaviour
     public LayerMask groundLayer;
     public Vector3 pos;
     public GameObject weapon;
+    float xvel;
+    float yvel;
 
 
-    bool IsGrounded()
+    public bool IsGrounded()
     {
         Vector2 offsetLeftUp = new Vector2(0, 0.16f);
         Vector2 offsetLeftDown = new Vector2(0, -0.16f);
@@ -76,23 +78,7 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-    bool SuperJump()
-    {
-        Vector2 positionDownSuper = transform.position;
-        Vector2 directionDownSuper = Vector2.down;
-        float distanceDownSuper = 999.0f;
-
-        RaycastHit2D hitDownSuper = Physics2D.Raycast(positionDownSuper, directionDownSuper, distanceDownSuper, groundLayer);
-
-        if (hitDownSuper.collider != null)
-        {
-            return true;
-        }
-
-        return false;
-
-    }
-
+       
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -100,7 +86,6 @@ public class PlayerScript : MonoBehaviour
     }
 
     // Update is called once per frame
-
 
     void Update()
     {
@@ -187,7 +172,7 @@ public class PlayerScript : MonoBehaviour
             rb.transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z + 1);
         }
 
-
     }
+
 }
 
