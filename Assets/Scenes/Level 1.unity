@@ -1848,11 +1848,31 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -73, y: -70, z: 0}
+  - first: {x: -73, y: -72, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 5
       m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 1
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -73, y: -71, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 4
+      m_TileSpriteIndex: 4
+      m_TileMatrixIndex: 1
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -73, y: -70, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 4
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2388,7 +2408,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: a0743ec38ce8416499a474f91b7ea128, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: 987892939b7ebee46ac44456f35030bb, type: 2}
-  - m_RefCount: 4
+  - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 201f4e30c85294e4abb6ec56932579d5, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: bb3b5b2b2f2d3454cb24d222fba6e818, type: 2}
@@ -2413,7 +2433,7 @@ Tilemap:
     m_Data: {fileID: 313651839404696180, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 611065533247025525, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
-  - m_RefCount: 4
+  - m_RefCount: 6
     m_Data: {fileID: -223391217462372170, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: -1491035274662818768, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
@@ -2448,7 +2468,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 4
+  - m_RefCount: 6
     m_Data:
       e00: 0
       e01: -1
@@ -2485,7 +2505,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 156
+  - m_RefCount: 158
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -11660,8 +11680,6 @@ MonoBehaviour:
     m_Bits: 8
   pos: {x: 0, y: 0, z: 0}
   weapon: {fileID: 388105133}
-  yvel: 0
-  xvel: 0
 --- !u!50 &1921944877
 Rigidbody2D:
   serializedVersion: 5
@@ -11778,6 +11796,8 @@ MonoBehaviour:
   cooldownText: {fileID: 1365227074}
   cooldownDuration: 5
   PlayerKilledEnemy: 0
+  MA: {fileID: 0}
+  DirectionDebug: 0
 --- !u!58 &1921944882
 CircleCollider2D:
   m_ObjectHideFlags: 0

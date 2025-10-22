@@ -1,11 +1,4 @@
-using System;
-using System.Drawing;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
-using UnityEditor.Tilemaps;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.GraphicsBuffer;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -158,18 +151,19 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            return;
+            //return;
         }
 
         rb.linearVelocity = new Vector3(xvel, yvel, 0);
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
+            print("mouse button pressed");
             GameObject clone;
-            clone = Instantiate(weapon, transform.position, transform.rotation);
+            clone = Instantiate(weapon, transform.position, Quaternion.identity);
             Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();
-            rb.linearVelocity = new Vector2(15, 0);
-            rb.transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z + 1);
+            rb.linearVelocity = new Vector2(2, 0);
+            rb.transform.position = new Vector3(transform.position.x, transform.position.y + 0, transform.position.z);
         }
 
     }
