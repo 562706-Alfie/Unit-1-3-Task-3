@@ -1,12 +1,11 @@
 using UnityEngine;
 
-
-public class LongPlatformDown : MonoBehaviour
+public class PlatformLeft : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    float yvel = 5;
+    float xvel = 0.8f;
     float _currentTime;
-    float time = 10;
+    public float time = 3;
     Rigidbody2D rb;
 
     void Start()
@@ -19,20 +18,20 @@ public class LongPlatformDown : MonoBehaviour
     void Update()
     {
         _currentTime = _currentTime - Time.deltaTime;
-        yvel = rb.linearVelocity.y;
-        if (_currentTime >= 0)
+        xvel = rb.linearVelocity.y;
+        if (_currentTime <= time)
         {
-            yvel = 4.65f;
+            xvel = -0.7f;
         }
 
-        rb.linearVelocity = new Vector3(0, +yvel);
+        rb.linearVelocity = new Vector3(+xvel, 0);
 
         if (_currentTime <= 0)
         {
-            yvel = -5f;
+            xvel = 0.7f;
         }
 
-        rb.linearVelocity = new Vector3(0, -yvel);
+        rb.linearVelocity = new Vector3(+xvel, 0);
 
         if (_currentTime <= -time)
         {

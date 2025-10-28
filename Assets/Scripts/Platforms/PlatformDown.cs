@@ -4,9 +4,9 @@ using UnityEngine;
 public class PlatformDown : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    float yvel = 5;
+    float yvel = 0.8f;
     float _currentTime;
-    float time = 3;
+    public float time = 3;
     Rigidbody2D rb;
 
     void Start()
@@ -22,14 +22,14 @@ public class PlatformDown : MonoBehaviour
         yvel = rb.linearVelocity.y;
         if (_currentTime >= 0)
         {
-            yvel = 4.65f;
+            yvel = 0.8f;
         }
                 
         rb.linearVelocity = new Vector3(0, +yvel);
 
         if (_currentTime <= 0)
         {
-            yvel = -5f;
+            yvel = -0.8f;
         }
 
         rb.linearVelocity = new Vector3(0, -yvel);

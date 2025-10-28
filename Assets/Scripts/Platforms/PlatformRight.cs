@@ -1,10 +1,9 @@
 using UnityEngine;
 
-
-public class PLatformUp : MonoBehaviour
+public class PlatformRight : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    float yvel = -0.8f;
+    float xvel = 0.8f;
     float _currentTime;
     public float time = 3;
     Rigidbody2D rb;
@@ -19,20 +18,20 @@ public class PLatformUp : MonoBehaviour
     void Update()
     {
         _currentTime = _currentTime - Time.deltaTime;
-        yvel = rb.linearVelocity.y;
+        xvel = rb.linearVelocity.y;
         if (_currentTime <= time)
         {
-            yvel = -0.8f;
+            xvel = 0.7f;
         }
 
-        rb.linearVelocity = new Vector3(0, +yvel);
+        rb.linearVelocity = new Vector3(+xvel, 0);
 
         if (_currentTime <= 0)
         {
-            yvel = 0.8f;
+            xvel = -0.7f;
         }
 
-        rb.linearVelocity = new Vector3(0, -yvel);
+        rb.linearVelocity = new Vector3(+xvel, 0);
 
         if (_currentTime <= -time)
         {
