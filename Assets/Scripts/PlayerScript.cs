@@ -156,6 +156,7 @@ public class PlayerScript : MonoBehaviour
 
         rb.linearVelocity = new Vector3(xvel, yvel, 0);
 
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             print("mouse button pressed");
@@ -164,8 +165,9 @@ public class PlayerScript : MonoBehaviour
             Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();
             rb.linearVelocity = new Vector2(2, 0);
             rb.transform.position = new Vector3(transform.position.x, transform.position.y + 0, transform.position.z);
+        
         }
-
+    */
     }
 
 }

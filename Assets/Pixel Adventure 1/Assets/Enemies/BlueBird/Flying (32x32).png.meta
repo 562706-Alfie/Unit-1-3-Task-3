@@ -156,12 +156,12 @@ TextureImporter:
       name: Flying (32x32)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3
-        width: 32
-        height: 25
+        x: 1
+        y: 4
+        width: 30
+        height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,12 +178,12 @@ TextureImporter:
       name: Flying (32x32)_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 3
-        width: 33
-        height: 25
+        x: 33
+        y: 4
+        width: 31
+        height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,12 +200,12 @@ TextureImporter:
       name: Flying (32x32)_2
       rect:
         serializedVersion: 2
-        x: 63
-        y: 5
-        width: 34
-        height: 22
+        x: 64
+        y: 6
+        width: 32
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -222,12 +222,12 @@ TextureImporter:
       name: Flying (32x32)_3
       rect:
         serializedVersion: 2
-        x: 95
-        y: 5
-        width: 34
-        height: 22
+        x: 96
+        y: 6
+        width: 32
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -247,9 +247,9 @@ TextureImporter:
         x: 131
         y: 0
         width: 30
-        height: 29
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -263,37 +263,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flying (32x32)_5
-      rect:
-        serializedVersion: 2
-        x: 155
-        y: 11
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1c193ee770e6a0a20800000000000000
-      internalID: 3029354677832749505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Flying (32x32)_6
       rect:
         serializedVersion: 2
-        x: 162
-        y: 1
-        width: 31
-        height: 28
+        x: 163
+        y: 2
+        width: 29
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -310,12 +288,12 @@ TextureImporter:
       name: Flying (32x32)_7
       rect:
         serializedVersion: 2
-        x: 194
-        y: 1
-        width: 29
-        height: 28
+        x: 195
+        y: 2
+        width: 27
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -332,12 +310,12 @@ TextureImporter:
       name: Flying (32x32)_8
       rect:
         serializedVersion: 2
-        x: 226
-        y: 1
-        width: 29
-        height: 28
+        x: 227
+        y: 2
+        width: 27
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -354,12 +332,12 @@ TextureImporter:
       name: Flying (32x32)_9
       rect:
         serializedVersion: 2
-        x: 258
-        y: 1
-        width: 29
-        height: 28
+        x: 259
+        y: 2
+        width: 27
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -376,7 +354,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3cf1f152ba30b7e469058680f89e3334
     internalID: 0
     vertices: []
     indices: 
@@ -384,7 +362,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Flying (32x32)_0: 6570920502705930198
       Flying (32x32)_1: 3944408015643112240

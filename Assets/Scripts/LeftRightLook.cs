@@ -1,21 +1,48 @@
 using UnityEngine;
+using System;
 
 public class LeftRightLook : MonoBehaviour
 {
 
-    private Rigidbody2D body;
-    private SpriteRenderer spriteRenderer;
+    Rigidbody2D rb;
+    public LayerMask groundLayerMask;
+    float xvel;
+    public PlayerScript playerScript;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+        xvel = 0.16f;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        body.linearVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
-        spriteRenderer.flipX = body.linearVelocity.x < 0f;
+        Movement();
+
+        print("player pos is " + playerScript.pos);
     }
+
+
+    void Movement()
+    {
+        if (xvel > 0)
+            {
+                xvel = -xvel;
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+
+
+
+        if (xvel < 0)
+            {
+                xvel = -xvel;
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+
+     
+
+        rb.linearVelocity = new Vector3(xvel, 0, 0);
+
+    }
+
 }

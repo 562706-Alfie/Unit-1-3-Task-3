@@ -22,6 +22,7 @@ public class PlatformLeft : MonoBehaviour
         if (_currentTime <= time)
         {
             xvel = -0.7f;
+            GetComponent<SpriteRenderer>().flipX = false;
         }
 
         rb.linearVelocity = new Vector3(+xvel, 0);
@@ -29,6 +30,7 @@ public class PlatformLeft : MonoBehaviour
         if (_currentTime <= 0)
         {
             xvel = 0.7f;
+            GetComponent<SpriteRenderer>().flipX = true;
         }
 
         rb.linearVelocity = new Vector3(+xvel, 0);
